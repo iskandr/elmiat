@@ -2,9 +2,26 @@
 
 Embodied conversational agent placed inside a tree sculpture within an activated art space. 
 
-## High level design (v0)
-
+## High level design 
+### v0
 Do this in real time: **ASR** -> **LLM** -> **TTS**
+
+### v1
+
+
+Instruction tuning of the core LLM using scripts with one or more rounds of interaction in this format: 
+
+```
+See: <emoji sequence describing camera input or dream imagery>
+Hear: <ASR text transcription if awake>
+Env: <is it dawn, dusk, day, or night? what is the position of the moon? is it low/flood/high/ebb tide?>
+-->
+Thought: <English language sequence in response to sensory inputs>
+--> 
+Speak: <optional speech sequence>
+```
+
+The model stays in a dream loop, being prompted by random imagery + current `Env` information at regular intervals. If someone approaches it also wakes up, added **ASR** transcription as a sensory input and use **TTS** for spoken outputs. 
 
 ## Questions
 
